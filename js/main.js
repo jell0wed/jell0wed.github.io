@@ -110,77 +110,8 @@
 		})
 	};
 
-	
 
 
-
-	// Easy Repsonsive Tabs
-	var responsiveTabs = function(){
-		$('#fh5co-tab-feature').easyResponsiveTabs({
-	      type: 'default',
-	      width: 'auto', 
-	      fit: true, 
-	      inactive_bg: '',
-	      active_border_color: '',
-	      active_content_border_color: '',
-	      closed: 'accordion',
-	      tabidentify: 'hor_1'
-	            
-	    });
-	    $('#fh5co-tab-feature-center').easyResponsiveTabs({
-	      type: 'default',
-	      width: 'auto',
-	      fit: true, 
-	      inactive_bg: '',
-	      active_border_color: '',
-	      active_content_border_color: '',
-	      closed: 'accordion', 
-	      tabidentify: 'hor_1' 
-	      
-	    });
-	    $('#fh5co-tab-feature-vertical').easyResponsiveTabs({
-	      type: 'vertical',
-	      width: 'auto',
-	      fit: true,
-	      inactive_bg: '',
-	      active_border_color: '',
-	      active_content_border_color: '',
-	      closed: 'accordion',
-	      tabidentify: 'hor_1'
-	    });
-	};
-
-	// Owl Carousel
-	var owlCrouselFeatureSlide = function() {
-		var owl = $('.owl-carousel');
-		owl.owlCarousel({
-			items: 1,
-		    loop: true,
-		    margin: 0,
-		    responsiveClass: true,
-		    nav: true,
-		    dots: true,
-		    smartSpeed: 500,
-		    navText: [
-		      "<i class='ti-arrow-left owl-direction'></i>",
-		      "<i class='ti-arrow-right owl-direction'></i>"
-	     	]
-		});
-	};
-
-	var testimonialCarousel = function(){
-		var owl = $('.owl-carousel-fullwidth');
-		owl.owlCarousel({
-			items: 1,
-		    loop: true,
-		    margin: 0,
-		    responsiveClass: true,
-		    nav: false,
-		    dots: true,
-		    smartSpeed: 500,
-		    autoHeight: true
-		});
-	};
 
 	// MagnificPopup
 	var magnifPopup = function() {
@@ -227,10 +158,7 @@
 	$(function(){
 		burgerMenu();
 		mobileFastClick();
-		responsiveTabs();
 		magnifPopup();
-		owlCrouselFeatureSlide();
-		testimonialCarousel();
 		sScrollTop();
 		wResize();
 		viewWorks();

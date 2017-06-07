@@ -4,14 +4,14 @@
   module.exports = function(grunt) {
     grunt.initConfig({
       wiredep: {
-
+        directory: 'bower_components',
         task: {
 
           // Point to the files that should be updated when
           // you run `grunt wiredep`
           src: [
-            'app/index.html',
-            'app/views/*.html'
+            'index.html',
+            'views/*.html'
           ],
 
           options: {
