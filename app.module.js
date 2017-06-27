@@ -11,6 +11,9 @@
       .when('/about', {
         template: '<poisson-about></poisson-about>'
       })
+      .when('/projects', {
+        template: '<poisson-project-list></poisson-project-list>'
+      })
       .otherwise('/about');
   }]);
 })();
