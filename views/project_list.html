@@ -1,12 +1,12 @@
 <div id="fh5co-work">
 	<div class="container" ng-if="placementParams">
-		<div class="poisson-intro">
+		<div class="poisson-intro col-md-10 col-md-offset-1">
 			<h1>Projects</h1>
-			<p>Donec urna mauris, pharetra in aliquam ac, convallis sit amet felis. Integer eu accumsan orci. In hac habitasse platea dictumst. Nullam consectetur interdum arcu in volutpat. Nullam dictum massa tristique, porta lorem et, maximus urna. </p>
+			<p>Over the years I have had the chance to work on some amazing projects. Not only was I experimenting and deepening my technical expertise with various emergant technologies, extra-curricular projects also crafted my work-ethic be it individually or as part of a team.</p>
 			<div style="clear:both"></div>
 		</div>
 		<div class="row" ng-repeat="row in [] | range:placementParams.numRows">
-			<div class="col-md-6 col-sm-6 col-xs-6" ng-repeat="col in [] | range:placementParams.numCols">
+			<div class="col-md-6 col-sm-12 col-xs-12" ng-repeat="col in [] | range:placementParams.numCols">
 				<project-placeholder ng-if="placement" row="row" col="col"></project-placeholder>
 			</div>
 		</div>

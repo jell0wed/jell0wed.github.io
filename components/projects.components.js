@@ -1,30 +1,6 @@
 (function() {
 	'use strict';
-  var motivations = [{
-    header: 'Motivation 1',
-    text: 'Testing motivation 1'
-  },{
-    header: 'Motivation 2',
-    text: 'Testing motivation 2'
-  },{
-    header: 'Motivation 3',
-    text: 'Testing motivation 3'
-  },
-  ];
-
-  var projects = [{
-    header: 'project 1',
-    description: 'project 1 desc'
-  }, {
-    header: 'project 2',
-    description: 'project 2 desc'
-  }, {
-    header: 'project 3',
-    description: 'project 3 desc'
-  }];
-
-  var placement = [];
-
+  
   function shuffle(array) {
       let counter = array.length;
 
