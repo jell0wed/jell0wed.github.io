@@ -1,23 +1,13 @@
-<div id="fh5co-work" ng-init="console.log('TEST')">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6 col-sm-6 col-xs-6 fh5co-work-wrap">
-				<project-placeholder placement="placement" row="0" col="0"></project-placeholder>
-				
-			</div>
-
-			<div class="col-md-6 col-sm-6 col-xs-6 fh5co-work-wrap">
-				<project-placeholder placement="placement" row="0" col="1"></project-placeholder>
-			</div>
+<div id="fh5co-work">
+	<div class="container" ng-if="placementParams">
+		<div class="poisson-intro">
+			<h1>Projects</h1>
+			<p>Donec urna mauris, pharetra in aliquam ac, convallis sit amet felis. Integer eu accumsan orci. In hac habitasse platea dictumst. Nullam consectetur interdum arcu in volutpat. Nullam dictum massa tristique, porta lorem et, maximus urna. </p>
+			<div style="clear:both"></div>
 		</div>
-
-		<div class="row">
-			<div class="col-md-6 col-sm-6 col-xs-6 fh5co-work-wrap">
-				<project-placeholder placement="placement" row="1" col="0"></project-placeholder>
-			</div>
-
-			<div class="col-md-6 col-sm-6 col-xs-6 fh5co-work-wrap">
-				<project-placeholder placement="placement" row="1" col="1"></project-placeholder>
+		<div class="row" ng-repeat="row in [] | range:placementParams.numRows">
+			<div class="col-md-6 col-sm-6 col-xs-6" ng-repeat="col in [] | range:placementParams.numCols">
+				<project-placeholder ng-if="placement" row="row" col="col"></project-placeholder>
 			</div>
 		</div>
 	</div>

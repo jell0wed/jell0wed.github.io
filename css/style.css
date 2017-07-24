@@ -186,7 +186,7 @@ pre {
 
 #fh5co-header {
   margin-top: 5em;
-  margin-bottom: 5em;
+  margin-bottom: 1em;
 }
 @media screen and (max-width: 768px) {
   #fh5co-header {
@@ -1285,3 +1285,34 @@ a > img.fh5co-align-center {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+.poisson-project-overlay.enter {
+  animation: bounceIn 1s;
+  opacity: 1!important;
+}
+
+.poisson-project-overlay.exit {
+  animation: fadeOut 1s;
+  opacity: 0!important;
+}
+
+.poisson-motivation {
+  margin-top: 30px;
+}
+
+.poisson-motivation > h4 {
+  text-transform: uppercase;
+}
+
+.poisson-motivation > h4::after {
+  content: ".";
+}
+
+.poisson-intro {
+  margin-bottom: 15px;
+}
+
+.poisson-intro p {
+  width: 55%;
+  float: right;
+}

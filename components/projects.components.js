@@ -3,12 +3,27 @@
   var motivations = [{
     header: 'Motivation 1',
     text: 'Testing motivation 1'
-  }];
+  },{
+    header: 'Motivation 2',
+    text: 'Testing motivation 2'
+  },{
+    header: 'Motivation 3',
+    text: 'Testing motivation 3'
+  },
+  ];
 
   var projects = [{
     header: 'project 1',
     description: 'project 1 desc'
+  }, {
+    header: 'project 2',
+    description: 'project 2 desc'
+  }, {
+    header: 'project 3',
+    description: 'project 3 desc'
   }];
+
+  var placement = [];
 
   function shuffle(array) {
       let counter = array.length;
@@ -34,24 +49,32 @@
     .module('poissonApp')
     .component('poissonProjectList', {
       templateUrl: './views/project_list.html',
-      controller: ['$scope', function($scope) {
+      controller: ['$scope', 'poissonData', function($scope, poissonData) {
         $scope.placement = [];
+        $scope.placementParams = {};
 
         var randomizePlacement = function() {
-          var itemsToFit = motivations.length + projects.length;
-          var numCol = 2;
-          var numRows = Math.ceil(itemsToFit / numCol);
-          var itemsLeft = shuffle(motivations.concat(projects));
+          poissonData.project_placeholders().then(function(dat) {
+            var placeholders = dat.data;
+            var itemsToFit = placeholders.length;
+            var numCols = 2;
+            var numRows = Math.ceil(itemsToFit / numCols);
+            var itemsLeft = shuffle(placeholders);
 
-          for(var i = 0; i < numRows; i++) {
-            var innerRow = [];
-            for(var j = 0; j < numCol; j++) {
-              innerRow.push(itemsLeft[i * numCol + j]);
+            for(var i = 0; i < numRows; i++) {
+              var innerRow = [];
+              for(var j = 0; j < numCols; j++) {
+                innerRow.push(itemsLeft[i * numCols + j]);
+              }
+              $scope.placement.push(innerRow);
             }
-            $scope.placement.push(innerRow);
-          }
-          console.log('TEST');
-          console.log($scope.placement);
+
+            $scope.placementParams = {
+              numItems: placeholders.length,
+              numCols: numCols,
+              numRows: numRows
+            };
+          });
         };
 
         $scope.init = function() {
@@ -61,14 +84,20 @@
         $scope.init();
       }]
     })
-    .directive('motivationPlaceholder', function () {
+    .directive('projectPlaceholder', function () {
       return {
         scope: {
-          placement: '=',
           row: '=',
           col: '='
         },
-        template: '<h3>{{placement[row][col].header}}</h3><p></p>'
+        templateUrl: './views/directives/project_placeholder.html',
+        controller: function ($scope) {
+          $scope.init = function() {
+            $scope.currentPlaceholder = $scope.$parent.placement[$scope.row][$scope.col];
+          };
+
+          $scope.init();
+        }
       };   	
     });
 })();
