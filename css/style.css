@@ -1311,3 +1311,19 @@ a > img.fh5co-align-center {
 .poisson-intro {
   margin-bottom: 15px;
 }
+
+.poisson-project-category {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 10px
+}
+
+.poisson-project-category > h4 {
+  margin:0;
+  line-height: 10px;
+}
+
+.poisson-project-category > .poisson-project-category-border {
+  margin-left: 85px;
+  border-bottom: 3px solid #000;
+}

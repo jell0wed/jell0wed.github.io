@@ -1,13 +1,26 @@
 <div id="fh5co-work">
-	<div class="container" ng-if="placementParams">
+	<div class="container" ng-if="displayedItems">
 		<div class="poisson-intro col-md-10 col-md-offset-1">
 			<h1>Projects</h1>
 			<p>Over the years I have had the chance to work on some amazing projects. Not only was I experimenting and deepening my technical expertise with various emergant technologies, extra-curricular projects also crafted my work-ethic be it individually or as part of a team.</p>
 			<div style="clear:both"></div>
 		</div>
-		<div class="row" ng-repeat="row in [] | range:placementParams.numRows">
-			<div class="col-md-6 col-sm-12 col-xs-12" ng-repeat="col in [] | range:placementParams.numCols">
-				<project-placeholder ng-if="placement" row="row" col="col"></project-placeholder>
+
+		<div ng-if="categories" ng-repeat="category in categories">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="poisson-project-category">
+						<h4>{{category}}</h4>
+						<div class="poisson-project-category-border"></div>
+					</div>
+				</div>
+			</div>
+			
+
+			<div class="row" ng-repeat="row in [] | range:displayedItems['category_' + category].numRows">
+				<div class="col-md-6 col-sm-12 col-xs-12" ng-repeat="col in [] | range:displayedItems['category_' + category].numCols">
+					<project-placeholder ng-if="displayedItems" row="row" col="col" category="category"></project-placeholder>
+				</div>
 			</div>
 		</div>
 	</div>

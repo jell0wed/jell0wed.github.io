@@ -1,23 +1,54 @@
-[{ "type": "motivation",
-  "header": "Work Hard",
-  "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et turpis eget tellus pellentesque bibendum. Aliquam cursus massa vehicula est posuere, semper sodales tellus bibendum. Nam id hendrerit ex, vitae euismod velit. Sed in consectetur purus." },
- { "type": "motivation",
-  "header": "Be Bold",
-  "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et turpis eget tellus pellentesque bibendum. Aliquam cursus massa vehicula est posuere, semper sodales tellus bibendum. Nam id hendrerit ex, vitae euismod velit. Sed in consectetur purus." },
- { "type": "motivation",
-  "header": "Never stop",
-  "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et turpis eget tellus pellentesque bibendum. Aliquam cursus massa vehicula est posuere, semper sodales tellus bibendum. Nam id hendrerit ex, vitae euismod velit. Sed in consectetur purus." },
-  { "type": "project",
-  "header": "Project 1",
-  "tech": ["AngularJS", "JavasScript"],
-  "text": "Testing asdsadsa" },
- { "type": "project",
-  "header": "Project 2",
-  "text": "" },
- { "type": "project",
-  "header": "Project 3",
-  "text": "" },
- { "type": "project",
-  "header": "Project 4",
-  "text": "" }
-]
+{
+  "categories": ["2017"],
+  "motivations": [
+    { 
+      "type": "motivation",
+      "header": "Work Hard",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et turpis eget tellus pellentesque bibendum. Aliquam cursus massa vehicula est posuere, semper sodales tellus bibendum. Nam id hendrerit ex, vitae euismod velit. Sed in consectetur purus."
+    },
+    { 
+      "type": "motivation",
+      "header": "Be Bold",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et turpis eget tellus pellentesque bibendum. Aliquam cursus massa vehicula est posuere, semper sodales tellus bibendum. Nam id hendrerit ex, vitae euismod velit. Sed in consectetur purus."
+    },
+    { 
+      "type": "motivation",
+      "header": "Never Stop",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et turpis eget tellus pellentesque bibendum. Aliquam cursus massa vehicula est posuere, semper sodales tellus bibendum. Nam id hendrerit ex, vitae euismod velit. Sed in consectetur purus."
+    }
+  ],
+  "projects": {
+    "2017": [
+      {
+        "type": "project",
+        "header": "Project 1",
+        "tech": ["AngularJS", "JavasScript"],
+        "text": "Testing asdsadsa"
+      },
+      {
+        "type": "project",
+        "header": "Project 1",
+        "tech": ["AngularJS", "JavasScript"],
+        "text": "Testing asdsadsa"
+      },
+      {
+        "type": "project",
+        "header": "Project 1",
+        "tech": ["AngularJS", "JavasScript"],
+        "text": "Testing asdsadsa"
+      },
+      {
+        "type": "project",
+        "header": "Project 1",
+        "tech": ["AngularJS", "JavasScript"],
+        "text": "Testing asdsadsa"
+      },
+      {
+        "type": "project",
+        "header": "Project 1",
+        "tech": ["AngularJS", "JavasScript"],
+        "text": "Testing asdsadsa"
+      }
+    ]
+  }
+}

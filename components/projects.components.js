@@ -1,6 +1,6 @@
 (function() {
 	'use strict';
-  
+
   function shuffle(array) {
       let counter = array.length;
 
@@ -26,35 +26,36 @@
     .component('poissonProjectList', {
       templateUrl: './views/project_list.html',
       controller: ['$scope', 'poissonData', function($scope, poissonData) {
-        $scope.placement = [];
-        $scope.placementParams = {};
+        //$scope.categories = 
 
-        var randomizePlacement = function() {
+        var loadData = function() {
           poissonData.project_placeholders().then(function(dat) {
-            var placeholders = dat.data;
-            var itemsToFit = placeholders.length;
-            var numCols = 2;
-            var numRows = Math.ceil(itemsToFit / numCols);
-            var itemsLeft = shuffle(placeholders);
+            $scope.displayedItems = [];
+            $scope.categories = dat.data.categories;
 
-            for(var i = 0; i < numRows; i++) {
-              var innerRow = [];
-              for(var j = 0; j < numCols; j++) {
-                innerRow.push(itemsLeft[i * numCols + j]);
-              }
-              $scope.placement.push(innerRow);
+            var categories = dat.data.categories;
+            var motivations = dat.data.motivations;
+            var projects = dat.data.projects;
+            
+            for(var i = 0; i < categories.length; i++) {
+              motivations = shuffle(motivations);
+              var currentCategory = categories[i];
+              var categoryItems = shuffle(projects[currentCategory]);
+              var motivationItems = motivations.splice(0, Math.floor(Math.random() * motivations.length));
+              var items = shuffle(categoryItems.concat(motivationItems));
+
+              $scope.displayedItems["category_" + currentCategory] = {
+                "category": currentCategory,
+                "items": items,
+                "numCols": 2,
+                "numRows": Math.ceil(items.length / 2)
+              };
             }
-
-            $scope.placementParams = {
-              numItems: placeholders.length,
-              numCols: numCols,
-              numRows: numRows
-            };
           });
         };
 
         $scope.init = function() {
-          randomizePlacement();
+          loadData();
         };
 
         $scope.init();
@@ -64,12 +65,14 @@
       return {
         scope: {
           row: '=',
-          col: '='
+          col: '=',
+          category: '='
         },
         templateUrl: './views/directives/project_placeholder.html',
         controller: function ($scope) {
           $scope.init = function() {
-            $scope.currentPlaceholder = $scope.$parent.placement[$scope.row][$scope.col];
+            var index = $scope.row * 2 + $scope.col;
+            $scope.currentPlaceholder = $scope.$parent.displayedItems["category_" + $scope.category].items[index];
           };
 
           $scope.init();
