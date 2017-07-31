@@ -1,5 +1,5 @@
 {
-  "categories": ["2017"],
+  "categories": ["2017", "2016"],
   "motivations": [
     { 
       "type": "motivation",
@@ -21,9 +21,10 @@
     "2017": [
       {
         "type": "project",
-        "header": "Project 1",
-        "tech": ["AngularJS", "JavasScript"],
-        "text": "Testing asdsadsa"
+        "header": "EmailChecker",
+        "tech": ["Java", "Python", "C#", "C++"],
+        "tags": ["Software as service", "Big data"],
+        "text": "All-in-one solution for small-medium enterprises to comply to Canada's Anti-Spam Legislation (C-28)."
       },
       {
         "type": "project",
@@ -43,6 +44,14 @@
         "tech": ["AngularJS", "JavasScript"],
         "text": "Testing asdsadsa"
       },
+      {
+        "type": "project",
+        "header": "Project 1",
+        "tech": ["AngularJS", "JavasScript"],
+        "text": "Testing asdsadsa"
+      }
+    ],
+    "2016": [
       {
         "type": "project",
         "header": "Project 1",

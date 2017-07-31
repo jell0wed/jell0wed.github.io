@@ -2,7 +2,7 @@
   'use strict';
 
   var poissonApp = angular.module('poissonApp',
-    ['ngRoute']);
+    ['ngRoute', 'hc.marked']);
 
   // Configure router
   poissonApp.config(['$locationProvider', '$routeProvider', function config($locationProvider, $routeProvider) {
@@ -13,6 +13,9 @@
       })
       .when('/projects', {
         template: '<poisson-project-list></poisson-project-list>'
+      })
+      .when('/project-detail/:name', {
+        template: '<poisson-project-detail></poisson-project-detail>'
       })
       .otherwise('/about');
   }]);
