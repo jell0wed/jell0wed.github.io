@@ -19,6 +19,25 @@
               
               $scope.projectDetails = projectDetails[$scope.projectName];
             });
+
+            angular.element(document).ready(initializeCaroussel);
+          }
+
+          function initializeCaroussel() {
+            $('.owl-carousel').owlCarousel({
+              items: 2,
+              center: true,
+              loop: true,
+              margin: 0,
+              responsiveClass: true,
+              nav: true,
+              dots: true,
+              smartSpeed: 500,
+              navText: [
+                "<i class='ti-arrow-left owl-direction'></i>",
+                "<i class='ti-arrow-right owl-direction'></i>"
+              ]
+            });
           }
 
           $scope.init();
