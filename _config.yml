@@ -22,6 +22,9 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jell0wed
 github_username:  jell0wed
 
+baseurl: /
+url: http://poisson.io
+
 # Build settings
 markdown: kramdown
 remote_theme: mmistakes/so-simple-theme
