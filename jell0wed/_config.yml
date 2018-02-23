@@ -24,10 +24,9 @@ github_username:  jell0wed
 
 # Build settings
 markdown: kramdown
-remote_theme: mmistakes/so-simple-theme
+theme: jekyll-theme-so-simple
 plugins:
   - jekyll-feed
-  - jekyll-remote-theme
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
